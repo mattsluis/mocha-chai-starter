@@ -10,6 +10,9 @@ app.get('/', function(req, res) {
 
 app.use('/candies', require('./controllers/candies'));
 
-app.listen(3000);
+
+if(!module.parent) {
+  app.listen(3000);
+}
 
 module.exports = app;
